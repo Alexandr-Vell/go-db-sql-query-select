@@ -13,8 +13,6 @@ type Sale struct {
 	Date    string
 }
 
-// String реализует метод интерфейса fmt.Stringer для Sale, возвращает строковое представление объекта Sale.
-// Теперь, если передать объект Sale в fmt.Println(), то выведется строка, которую вернёт эта функция.
 func (s Sale) String() string {
 	return fmt.Sprintf("Product: %d Volume: %d Date:%s", s.Product, s.Volume, s.Date)
 }
@@ -22,7 +20,6 @@ func (s Sale) String() string {
 func selectSales(client int) ([]Sale, error) {
 	var sales []Sale
 
-	// напишите код здесь
 	db, err := sql.Open("sqlite", "demo.db")
 	if err != nil {
 		fmt.Println(err)
